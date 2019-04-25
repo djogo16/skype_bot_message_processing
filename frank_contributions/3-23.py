@@ -17,7 +17,7 @@ class SkypePing(SkypeEventLoop):
                                 os.rename("s3.txt",file_name)  #rename to avoid "file exists error"
                                 s3.upload_file(file_name, bucket_name, "dump/"+file_name)
                                 subprocess.call(["hdfs", "dfs", "-put", file_name]) #save the file to hdfs
-                                                               os.remove(file_name)
+                                os.remove(file_name)
                                 print("------------updating s3-----------------")
 
                         print(event.msg)
