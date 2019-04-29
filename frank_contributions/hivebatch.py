@@ -1,5 +1,8 @@
 '''Script that checks for new skype files in hdfs and insert those data into hive table
-   Must have database skype_bot and table skype_data already created
+   Must have :
+	database skype_bot and table skype_data already created
+	file named save_time with the value of the last time hive was updated (can be otained by time.time() method)
+   
 '''
 import subprocess
 import re
