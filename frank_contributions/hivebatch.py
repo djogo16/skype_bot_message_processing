@@ -1,5 +1,5 @@
 '''Script that checks for new skype files in hdfs and insert those data into hive table
-   Must have database and table skype_bot skype_data already created
+   Must have database skype_bot and table skype_data already created
 '''
 import subprocess
 import re
@@ -16,7 +16,7 @@ with open("saved_time", "r+") as f:
                         subprocess.call(["hive","-e",hql_command])
                         print("Loaded data from file " + myfile + " into table skype_data")
                 f.seek(0)
-                f.write(str(re.findall("\d+\.\d+",files_since_last_update[-1])[0]))
+                f.write(str(re.findall("\d+\.\d+",files_since_last_update[-1])[0])) #save last updated time to file
                 f.truncate()
         else:
                 print("No new file detected. Database up to date\n")
