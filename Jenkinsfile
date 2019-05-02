@@ -8,7 +8,7 @@ pipeline {
                 }
             }
             steps {
-                sh 'python -m py_compile /frank_contributions/3-23.py /frank_contributions/hivebatch.py /frank_contributions/hive_job_scheduler.py' 
+                sh 'python -m py_compile /home/hadoop/Documents/skype_bot_message_processing/frank_contributions/3-23.py /home/hadoop/Documents/skype_bot_message_processing/frank_contributions/hivebatch.py /home/hadoop/Documents/skype_bot_message_processing/frank_contributions/hive_job_scheduler.py' 
             }
         }
     }
